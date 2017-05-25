@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
@@ -63,8 +64,9 @@ public class DataConfiguration {
 	}
 	
 	@Bean
-	public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
-	    HibernateTransactionManager tm = new HibernateTransactionManager(sessionFactory);
+	public PlatformTransactionManager transactionManager(SessionFactory sessionFactory) {
+	    HibernateTransactionManager tm = new HibernateTransactionManager();
+	    tm.setSessionFactory(sessionFactory);
 	    return tm;
 	}
 	
