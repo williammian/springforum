@@ -1,4 +1,4 @@
-package br.com.springforum.conf;
+package br.com.itexto.springforum.conf;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -7,7 +7,7 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 	
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[]{AppWebConfiguration.class};
+		return new Class[]{AppWebConfiguration.class, DataConfiguration.class};
 	}
 
 	@Override
