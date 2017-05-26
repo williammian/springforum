@@ -8,9 +8,9 @@ import br.com.itexto.springforum.dao.DAOTopico;
 import br.com.itexto.springforum.entidades.Assunto;
 import br.com.itexto.springforum.entidades.Topico;
 import br.com.itexto.springforum.entidades.Usuario;
+
 @Repository
 public class HBTopico extends HBDAO<Topico> implements DAOTopico {
-
 
 	protected Class getClazz() {
 		return Topico.class;

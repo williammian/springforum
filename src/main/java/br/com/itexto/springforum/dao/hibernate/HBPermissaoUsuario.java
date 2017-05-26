@@ -7,15 +7,12 @@ import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 import br.com.itexto.springforum.dao.DAOPermissaoUsuario;
 import br.com.itexto.springforum.entidades.PermissaoUsuario;
 import br.com.itexto.springforum.entidades.Usuario;
 
 @Repository("daoPermissaoUsuario")
-@Transactional(propagation=Propagation.SUPPORTS)
 public class HBPermissaoUsuario implements DAOPermissaoUsuario {
 	
 	@Autowired

@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.itexto.springforum.dao.DAOBase;
 
-@Transactional(propagation=Propagation.SUPPORTS)
 public abstract class HBDAO<T> implements DAOBase<T> {
 	@Autowired
 	private SessionFactory sessionFactory;

@@ -11,6 +11,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,9 +23,11 @@ import br.com.itexto.springforum.dao.DAOPermissaoUsuario;
 import br.com.itexto.springforum.dao.DAOTopico;
 import br.com.itexto.springforum.dao.DAOUsuario;
 import br.com.itexto.springforum.dao.mocks.MockDAOAssunto;
+import br.com.itexto.springforum.entidades.Assunto;
 import br.com.itexto.springforum.entidades.Usuario;
 
 @Controller
+@Transactional
 public class HomeController {
 	
 	
@@ -106,6 +109,11 @@ public class HomeController {
 			return registro(model);
 		}
 		getDaoUsuario().persistir(usuario);
+		
+		Assunto a = null;
+		
+		a.getNome();
+		
 		getDaoPermissaoUsuario().addRole("ROLE_MEMBRO", usuario);
 		if (! avatar.isEmpty()) {
 			processarAvatar(usuario, avatar);

@@ -9,13 +9,9 @@ import org.springframework.transaction.annotation.Transactional;
 import br.com.itexto.springforum.dao.DAOUsuario;
 import br.com.itexto.springforum.entidades.Usuario;
 
-@Transactional(propagation=Propagation.SUPPORTS)
 @Repository("daoUsuario")
 public class HBUsuario extends HBDAO<Usuario> implements DAOUsuario {
-	
-	
-
-	
+			
 	protected Class getClazz() {
 		return Usuario.class;
 	}
