@@ -23,7 +23,6 @@ import br.com.itexto.springforum.dao.DAOPermissaoUsuario;
 import br.com.itexto.springforum.dao.DAOTopico;
 import br.com.itexto.springforum.dao.DAOUsuario;
 import br.com.itexto.springforum.dao.mocks.MockDAOAssunto;
-import br.com.itexto.springforum.entidades.Assunto;
 import br.com.itexto.springforum.entidades.Usuario;
 
 @Controller
@@ -109,11 +108,6 @@ public class HomeController {
 			return registro(model);
 		}
 		getDaoUsuario().persistir(usuario);
-		
-		Assunto a = null;
-		
-		a.getNome();
-		
 		getDaoPermissaoUsuario().addRole("ROLE_MEMBRO", usuario);
 		if (! avatar.isEmpty()) {
 			processarAvatar(usuario, avatar);
